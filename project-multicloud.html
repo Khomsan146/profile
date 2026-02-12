@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Cloud Solution Design | Infrastructure Portfolio</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&family=JetBrains+Mono&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .project-hero {
+            padding-top: 120px;
+            padding-bottom: 60px;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: var(--surface);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-cyan);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .content-section h2 {
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .tech-stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .tech-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .img-large {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .img-large {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <nav id="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo"><span class="gradient-text">Golf</span>Khomsan</a>
+            <a href="index.html" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem;"><i
+                    data-lucide="arrow-left" style="width: 16px; display: inline; vertical-align: middle;"></i> Back to
+                Home</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="project-hero" data-reveal>
+            <span class="hero-label">Cloud Architecture</span>
+            <h1>Multi-Cloud <span class="gradient-text">Hybrid Solution Design</span></h1>
+            <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 800px; margin-top: 1rem;">
+                Strategic design integrating On-Premise Data Centers with AWS Public Cloud to achieve cost-efficiency,
+                data sovereignty compliance, and high availability.
+            </p>
+        </section>
+
+        <img src="images/project-multicloud.png" class="img-large" alt="Hybrid Cloud Architecture" data-reveal>
+
+        <div class="stat-grid" data-reveal>
+            <div class="stat-card">
+                <span class="stat-number">99.99%</span>
+                <span>Uptime SLA</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">HA</span>
+                <span>Active-Active</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">Costs</span>
+                <span>Optimized Usage</span>
+            </div>
+        </div>
+
+        <div class="content-section" data-reveal>
+            <h2>The Challenge</h2>
+            <p>The organization required scalable compute power for peak loads but needed to keep sensitive customer
+                data within their local data center due to strict compliance laws. A pure cloud or pure on-prem solution
+                was not viable.</p>
+        </div>
+
+        <div class="content-section" data-reveal>
+            <h2>The Solution</h2>
+            <p>Implemented a Hybrid Multi-Cloud architecture connecting on-prem infrastructure to AWS via Site-to-Site
+                VPN.</p>
+            <ul class="responsibilities-list" style="margin-top: 1.5rem;">
+                <li><strong>Network Integration:</strong> Established redundant VPN tunnels between AWS VPC and the
+                    local Data Center Firewall to ensure secure, private connectivity.</li>
+                <li><strong>Workload Distribution:</strong> Frontend and stateless services were deployed on AWS EKS to
+                    handle traffic spikes, while databases remained on-prem on high-performance Nutanix clusters.</li>
+                <li><strong>Unified Management:</strong> Used Rancher/ArgoCD to manage Kubernetes clusters across both
+                    environments from a single pane of glass.</li>
+                <li><strong>Disaster Recovery:</strong> Configured AWS S3 for offsite backups and implemented a warm
+                    standby DR plan in a secondary AWS region.</li>
+            </ul>
+        </div>
+
+        <div class="content-section" data-reveal>
+            <h2>Tech Stack</h2>
+            <div class="tech-stack-grid">
+                <div class="tech-item">AWS & On-Prem</div>
+                <div class="tech-item">Site-to-Site VPN</div>
+                <div class="tech-item">Kubernetes (EKS/K3s)</div>
+                <div class="tech-item">Terraform</div>
+                <div class="tech-item">Rancher</div>
+                <div class="tech-item">Cloudflare</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container" style="text-align: center; padding: 2rem 0; color: var(--text-secondary);">
+            <p>&copy; 2026 Golf Khomsan. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
