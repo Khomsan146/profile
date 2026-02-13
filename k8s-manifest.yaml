@@ -6,7 +6,7 @@ data:
   default.conf: |
     server {
         listen       80;
-        server_name  localhost;
+        server_name  profilekhomsan.tgks.cloud;
         root   /usr/share/nginx/html;
         index  index.html;
 
@@ -76,7 +76,8 @@ metadata:
 spec:
   ingressClassName: kong
   rules:
-    - http:
+    - host: profilekhomsan.tgks.cloud
+      http:
         paths:
           - path: /
             pathType: Prefix
