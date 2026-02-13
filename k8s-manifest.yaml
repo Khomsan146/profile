@@ -72,7 +72,10 @@ kind: Ingress
 metadata:
   name: profilekhomsan-ingress
   annotations:
+    # Essential for Kong Ingress Controller on K3s
     konghq.com/strip-path: "false"
+    konghq.com/preserve-host: "true"
+    konghq.com/protocols: "http,https"
 spec:
   ingressClassName: kong
   rules:
