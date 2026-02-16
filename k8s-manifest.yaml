@@ -40,7 +40,7 @@ spec:
     spec:
       containers:
         - name: profilekhomsan
-          image: ghcr.io/khomsan146/profile:1.2
+          image: ghcr.io/khomsan146/profile:2.0
           ports:
             - containerPort: 80
           volumeMounts:
