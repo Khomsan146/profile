@@ -108,10 +108,10 @@
     <main class="container">
         <section class="project-hero" data-reveal>
             <span class="hero-label">Process Automation</span>
-            <h1>Operations Center <span class="gradient-text">Automation with n8n</span></h1>
+            <h1>Infrastructure <span class="gradient-text">Automation & Monitoring Platform</span></h1>
             <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 800px; margin-top: 1rem;">
-                Developed intelligent, event-driven workflows utilizing n8n to integrate disparate tools (monitoring,
-                ticketing, chat) and automate repetitive operational tasks.
+                Deployed self-hosted n8n to automate operations, reduce manual workload, and enable real-time
+                visibility.
             </p>
         </section>
 
@@ -129,34 +129,52 @@
             </div>
             <div class="stat-card">
                 <span class="stat-number">60hrs</span>
-                <span>Saved per Month</span>
+                <span>Reduced Workload/Month</span>
             </div>
             <div class="stat-card">
                 <span class="stat-number">Real-time</span>
-                <span>Alert Handling</span>
+                <span>Alert Routing & Visibility</span>
             </div>
         </div>
 
         <div class="content-section" data-reveal>
             <h2>The Challenge</h2>
-            <p>The operations team was drowning in noisy alerts and manual data entry between systems (e.g., creating
-                Jira tickets from email alerts, updating Excel sheets). Response times were inconsistent, and human
-                error was frequent.</p>
+            <p>Production infrastructure required repetitive manual tasks such as handling monitoring alerts, log
+                review,
+                report generation, and cross-system coordination.</p>
+            <p style="margin-top: 1rem;">Operational processes were time-consuming and prone to delay.</p>
         </div>
 
         <div class="content-section" data-reveal>
             <h2>The Solution</h2>
-            <p>Self-hosted n8n in Docker to orchestrate automation logic across the toolstack.</p>
-            <ul class="responsibilities-list" style="margin-top: 1.5rem;">
-                <li><strong>Incident Management:</strong> Workflow triggers on high-priority Prometheus alerts ->
-                    Creates a Jira ticket -> Posts to Slack channel -> Calls PagerDuty for on-call engineer.</li>
-                <li><strong>Daily Reports:</strong> Scheduled workflow to query SQL databases, generate daily
-                    infrastructure health PDF reports, and email them to stakeholders automatically.</li>
-                <li><strong>Onboarding Automation:</strong> Streamlined user onboarding by chaining API calls to create
-                    AD accounts, assign licenses, and send welcome emails.</li>
-                <li><strong>Data Sync:</strong> Regular synchronization of asset inventory between cloud provider APIs
-                    and internal CMDB.</li>
-            </ul>
+            <p>Deployed and maintained a self-hosted n8n instance (Docker-based) to automate infrastructure operations
+                and integrate multiple systems.</p>
+
+            <div class="solution-grid" style="margin-top: 2rem; display: grid; gap: 2rem;">
+                <div class="solution-item">
+                    <h3 style="color: var(--accent-cyan); margin-bottom: 0.5rem;">Alert Handling Automation</h3>
+                    <p>Monitoring alerts → Automated notification routing → Structured response workflow for operations
+                        team</p>
+                </div>
+
+                <div class="solution-item">
+                    <h3 style="color: var(--accent-cyan); margin-bottom: 0.5rem;">Infrastructure Reporting Automation
+                    </h3>
+                    <p>Scheduled data queries → Generate infrastructure status reports → Automatic email distribution
+                    </p>
+                </div>
+
+                <div class="solution-item">
+                    <h3 style="color: var(--accent-cyan); margin-bottom: 0.5rem;">Data Integration & Dashboarding</h3>
+                    <p>Aggregated multiple infrastructure data sources into a centralized web-based monitoring dashboard
+                    </p>
+                </div>
+
+                <div class="solution-item">
+                    <h3 style="color: var(--accent-cyan); margin-bottom: 0.5rem;">API-Based System Integration</h3>
+                    <p>Connected REST APIs and webhooks to synchronize operational data between services</p>
+                </div>
+            </div>
         </div>
 
         <div class="content-section" data-reveal>
@@ -165,9 +183,9 @@
                 <div class="tech-item">n8n</div>
                 <div class="tech-item">Docker</div>
                 <div class="tech-item">Webhooks</div>
-                <div class="tech-item">REST APIs</div>
-                <div class="tech-item">Slack API</div>
-                <div class="tech-item">Jira API</div>
+                <div class="tech-item">SQL</div>
+                <div class="tech-item">Prometheus</div>
+                <div class="tech-item">Cloud APIs</div>
             </div>
         </div>
     </main>

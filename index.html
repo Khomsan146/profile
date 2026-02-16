@@ -91,177 +91,94 @@
                     </div>
                 </div>
 
-                <!-- Core Responsibilities -->
-                <div class="responsibilities-container" data-reveal>
-                    <h3 class="subsection-title">Core Responsibilities & Achievements</h3>
-                    <ul class="responsibilities-list">
-                        <li><strong>Advanced proficiency in Next Generation Firewall Operations</strong> and Security
-                            Compliance Assessment.</li>
-                        <li><strong>Designed and managed VPN Site-to-Site</strong> connections ensuring secure and
-                            stable cross-site connectivity.</li>
-                        <li>Operated and supported production infrastructure covering incident, problem, request, and
-                            change management.</li>
-                        <li>Bridged the gap between <strong>IT and OT systems</strong>, ensuring security standards
-                            across diverse environments.</li>
-                        <li>Designed, deployed, and troubleshot infrastructure across Data Center and Cloud
-                            environments.</li>
-                        <li>Managed virtualization platforms (VMware, Nutanix) to ensure high availability and
-                            performance.</li>
-                        <li>Implemented and maintained backup and disaster recovery solutions using Veeam Backup &
-                            Replication and Veritas Backup.</li>
-                        <li>Developed automation workflows using n8n to orchestrate infrastructure operations and
-                            notification processes.</li>
-                        <li>Integrated multiple data sources into a centralized web-based monitoring dashboard.</li>
-                        <li>Collaborated with internal teams and external vendors (Microsoft, Dell, Cisco TAC, Veritas).
-                        </li>
-                    </ul>
-                </div>
+
             </div>
         </section>
 
-        <!-- Technical Skills Section -->
-        <section id="skills" class="skills">
-            <div class="container text-center">
-                <h2 class="section-title" data-reveal>Technical Expertise</h2>
+        <!-- Core Responsibilities & Achievements Section -->
+        <section id="responsibilities" class="responsibilities">
+            <div class="container">
+                <div class="responsibilities-container" data-reveal>
+                    <h2 class="section-title">Core Responsibilities & Achievements</h2>
 
-                <!-- Certifications Badge -->
-                <div class="certifications-wrapper" style="margin-bottom: 3rem;" data-reveal>
-                    <button class="cert-badge" data-cert="rcna">
-                        <i data-lucide="award"></i> RCNA (Ruijie Network)
-                    </button>
-                    <button class="cert-badge" data-cert="vmtsp">
-                        <i data-lucide="award"></i> VMTSP (Veeam)
-                    </button>
-                    <button class="cert-badge" data-cert="cc">
-                        <i data-lucide="shield-check"></i> Certified in Cybersecurity (CC)
-                    </button>
-                </div>
-
-                <div class="skills-grid">
-                    <!-- 1. Network & Security -->
-                    <div class="skill-card" data-reveal
-                        style="border-color: var(--accent-cyan); box-shadow: 0 0 15px rgba(6, 182, 212, 0.1);">
-                        <h3><i data-lucide="shield-check"></i> Network & Security</h3>
-                        <div class="skill-list">
-                            <span class="skill-badge">Cloudflare DNS Management</span>
-                            <span class="skill-badge">Cloudflare WAF Configuration</span>
-                            <span class="skill-badge">Firewall Policy Management</span>
-                            <span class="skill-badge">DNAT / SNAT Configuration</span>
-                            <span class="skill-badge">VPN Site-to-Site</span>
-                            <span class="skill-badge">IDS / IPS</span>
-                            <span class="skill-badge">Network Segmentation</span>
-                        </div>
+                    <!-- 1. Cloud, Kubernetes & DevOps -->
+                    <div class="responsibility-group">
+                        <h3 class="subsection-title">Cloud, Kubernetes & DevOps</h3>
+                        <ul class="responsibilities-list">
+                            <li>Operated and maintained Amazon EKS production cluster (tfac-eks-cluster-prod) supporting
+                                containerized applications across UAT and Production environments.</li>
+                            <li>Implemented GitOps deployment strategy using ArgoCD and Helm to manage
+                                version-controlled Kubernetes deployments.</li>
+                            <li>Integrated CI/CD pipelines using Jenkins and SonarQube for automated build, code quality
+                                validation, and deployment.</li>
+                            <li>Managed container image lifecycle through GitHub Container Registry (GHCR), including
+                                version tagging and access control.</li>
+                            <li>Configured Kubernetes ingress and DNS (Cloudflare) for external service exposure.</li>
+                            <li>Administered Kong API Gateway (Kong Admin) for service routing, upstream configuration,
+                                and API exposure management.</li>
+                            <li>Troubleshot Kubernetes deployment, networking, and API routing issues in production
+                                environments.</li>
+                        </ul>
                     </div>
 
-                    <!-- 2. Container & Orchestration -->
-                    <div class="skill-card" data-reveal>
-                        <h3><i data-lucide="box"></i> Container & Orchestration</h3>
-                        <div class="skill-list">
-                            <span class="skill-badge">Docker</span>
-                            <span class="skill-badge">Kubernetes (K3s,K8s,EKS)</span>
-                            <span class="skill-badge">Helm</span>
-                            <span class="skill-badge">Kong </span>
-                            <span class="skill-badge">MetalLB</span>
-                            <span class="skill-badge">Longhorn Storage</span>
-                            <span class="skill-badge">Lens</span>
-                            <span class="skill-badge">Rancher</span>
-                        </div>
+                    <!-- 2. Network Security & Firewall -->
+                    <div class="responsibility-group" style="margin-top: 3rem;">
+                        <h3 class="subsection-title">Network Security & Firewall</h3>
+                        <ul class="responsibilities-list">
+                            <li>Migrated firewall infrastructure from Sophos to FortiGate 90G.</li>
+                            <li>Redesigned network zones and improved firewall policies for stronger segmentation and
+                                access control.</li>
+                            <li>Configured and maintained Site-to-Site VPN connections between locations.</li>
+                            <li>Applied security controls across IT and OT environments.</li>
+                        </ul>
                     </div>
 
-                    <!-- 3. Automation & DevOps -->
-                    <div class="skill-card" data-reveal>
-                        <h3><i data-lucide="zap"></i> Automation & DevOps</h3>
-                        <div class="skill-list">
-                            <span class="skill-badge">n8n Workflow</span>
-                            <span class="skill-badge">Terraform (IaC)</span>
-                            <span class="skill-badge">CI/CD Design</span>
-                            <span class="skill-badge">Nginx Proxy</span>
-                        </div>
+                    <!-- 3. Infrastructure & Data Center -->
+                    <div class="responsibility-group" style="margin-top: 3rem;">
+                        <h3 class="subsection-title">Infrastructure & Data Center Operations</h3>
+                        <ul class="responsibilities-list">
+                            <li>Supported and maintained production infrastructure, handling incidents, service
+                                requests, problems, and change activities.</li>
+                            <li>Deployed and maintained on-premise Data Center systems, including server setup and
+                                network configuration.</li>
+                            <li>Analyzed Apache access/error logs and system logs to troubleshoot traffic issues and
+                                HTTP errors (4xx/5xx).</li>
+                            <li>Coordinated with vendors (Microsoft, Dell, Cisco TAC, Veritas) for troubleshooting and
+                                issue resolution.</li>
+                        </ul>
                     </div>
 
-                    <!-- 4. GitOps & CI/CD -->
-                    <div class="skill-card" data-reveal>
-                        <h3><i data-lucide="git-branch"></i> GitOps & CI/CD</h3>
-                        <div class="skill-list">
-                            <span class="skill-badge">GitHub / GitLab</span>
-                            <span class="skill-badge">Jenkins</span>
-                            <span class="skill-badge">ArgoCD (GitOps)</span>
-                            <span class="skill-badge">GHCR (GitHub Container Registry)</span>
-                            <span class="skill-badge">Automated CI/CD Pipelines</span>
-                            <span class="skill-badge">SonarQube (Code Quality Analysis)</span>
-                        </div>
+                    <!-- 4. Virtualization -->
+                    <div class="responsibility-group" style="margin-top: 3rem;">
+                        <h3 class="subsection-title">Virtualization & High Availability</h3>
+                        <ul class="responsibilities-list">
+                            <li>Managed VMware and Nutanix virtualization platforms.</li>
+                            <li>Optimized VM resource allocation to maintain system stability and performance.</li>
+                            <li>Performed capacity planning to support workload growth.</li>
+                        </ul>
                     </div>
 
-                    <!-- 5. Monitoring & Observability -->
-                    <div class="skill-card" data-reveal>
-                        <h3><i data-lucide="activity"></i> Monitoring & Observability</h3>
-                        <div class="skill-list">
-                            <span class="skill-badge">Prometheus Metrics Collection</span>
-                            <span class="skill-badge">Grafana Dashboard Visualization</span>
-                            <span class="skill-badge">Centralized Web Monitoring Platform</span>
-                            <span class="skill-badge">Kubernetes & Cluster Health Monitoring</span>
-                            <span class="skill-badge">Automated Alerting Workflow (n8n)</span>
-                            <span class="skill-badge">Service Uptime & SLA Monitoring</span>
-                        </div>
+                    <!-- 5. Backup & DR -->
+                    <div class="responsibility-group" style="margin-top: 3rem;">
+                        <h3 class="subsection-title">Backup & Disaster Recovery</h3>
+                        <ul class="responsibilities-list">
+                            <li>Managed backup solutions using Veeam Backup & Replication and Veritas Backup.</li>
+                            <li>Conducted restore testing to ensure recovery readiness.</li>
+                            <li>Maintained disaster recovery procedures for critical systems.</li>
+                        </ul>
                     </div>
 
-                    <!-- 6. Infrastructure & Cloud -->
-                    <div class="skill-card" data-reveal>
-                        <h3><i data-lucide="cloud"></i> Infrastructure & Cloud</h3>
-                        <div class="skill-list">
-                            <span class="skill-badge">Data Center Ops</span>
-                            <span class="skill-badge">IaaS / DRaaS / BaaS</span>
-                            <span class="skill-badge">AWS (S3, EKS, Aorora ,ECS.EFS ,EBS ,ACM ,IAM,Bedrock)</span>
-                            <span class="skill-badge">local cloud (Vcloud)</span>
-                            <span class="skill-badge">High Availability</span>
-                            <span class="skill-badge">Load Balancing</span>
-                        </div>
-                    </div>
-
-                    <!-- 7. Virtualization -->
-                    <div class="skill-card" data-reveal>
-                        <h3><i data-lucide="layers"></i> Virtualization</h3>
-                        <div class="skill-list">
-                            <span class="skill-badge">VMware vSphere</span>
-                            <span class="skill-badge">Nutanix AHV</span>
-                            <span class="skill-badge">ESXi</span>
-                            <span class="skill-badge">Hyper-V</span>
-                        </div>
-                    </div>
-
-                    <!-- 8. Backup & DR -->
-                    <div class="skill-card" data-reveal>
-                        <h3><i data-lucide="hard-drive"></i> Backup & DR</h3>
-                        <div class="skill-list">
-                            <span class="skill-badge">Veeam Backup</span>
-                            <span class="skill-badge">Veritas Backup</span>
-                            <span class="skill-badge">Replication</span>
-                            <span class="skill-badge">NAS</span>
-                            <span class="skill-badge">Business Continuity</span>
-                        </div>
-                    </div>
-
-                    <!-- 9. OS & Scripting -->
-                    <div class="skill-card" data-reveal>
-                        <h3><i data-lucide="terminal"></i> OS & Scripting</h3>
-                        <div class="skill-list">
-                            <span class="skill-badge">Windows Server</span>
-                            <span class="skill-badge">Ubuntu Linux</span>
-                            <span class="skill-badge">PowerShell</span>
-                            <span class="skill-badge">Bash Scripting</span>
-                        </div>
-                    </div>
-
-                    <!-- 10. Architecture & Design -->
-                    <div class="skill-card" data-reveal style="grid-column: 1 / -1;">
-                        <h3><i data-lucide="pen-tool"></i> Architecture & Solution Design</h3>
-                        <div class="skill-list" style="justify-content: center;">
-                            <span class="skill-badge">Infra Architecture</span>
-                            <span class="skill-badge">DR Architecture</span>
-                            <span class="skill-badge">Hybrid Cloud Design</span>
-                            <span class="skill-badge">Scalability Planning</span>
-                            <span class="skill-badge">Technical Presales</span>
-                        </div>
+                    <!-- 6. Automation & Monitoring -->
+                    <div class="responsibility-group" style="margin-top: 3rem;">
+                        <h3 class="subsection-title">Automation & Monitoring</h3>
+                        <ul class="responsibilities-list">
+                            <li>Developed automation workflows using n8n to reduce manual operational tasks and improve
+                                notification processes.</li>
+                            <li>Built a web-based monitoring dashboard integrating multiple infrastructure data sources.
+                            </li>
+                            <li>Developed a gold price prediction project integrating TwelveData and GNews API for
+                                technical and sentiment analysis.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -387,6 +304,156 @@
                         </div>
                     </a>
 
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section id="skills" class="skills">
+            <div class="container text-center">
+                <h2 class="section-title" data-reveal>Technical Expertise</h2>
+
+                <!-- Certifications Badge -->
+                <div class="certifications-wrapper" style="margin-bottom: 3rem;" data-reveal>
+                    <button class="cert-badge" data-cert="rcna">
+                        <i data-lucide="award"></i> RCNA (Ruijie Network)
+                    </button>
+                    <button class="cert-badge" data-cert="vmtsp">
+                        <i data-lucide="award"></i> VMTSP (Veeam)
+                    </button>
+                    <button class="cert-badge" data-cert="cc">
+                        <i data-lucide="shield-check"></i> Certified in Cybersecurity (CC)
+                    </button>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- 1. Network & Security -->
+                    <div class="skill-card" data-reveal
+                        style="border-color: var(--accent-cyan); box-shadow: 0 0 15px rgba(6, 182, 212, 0.1);">
+                        <h3><i data-lucide="shield-check"></i> Network & Security</h3>
+                        <div class="skill-list">
+                            <span class="skill-badge">Cloudflare DNS Management</span>
+                            <span class="skill-badge">Cloudflare WAF Configuration</span>
+                            <span class="skill-badge">Firewall Policy Management</span>
+                            <span class="skill-badge">DNAT / SNAT Configuration</span>
+                            <span class="skill-badge">VPN Site-to-Site</span>
+                            <span class="skill-badge">IDS / IPS</span>
+                            <span class="skill-badge">Network Segmentation</span>
+                        </div>
+                    </div>
+
+                    <!-- 2. Container & Orchestration -->
+                    <div class="skill-card" data-reveal>
+                        <h3><i data-lucide="box"></i> Container & Orchestration</h3>
+                        <div class="skill-list">
+                            <span class="skill-badge">Docker</span>
+                            <span class="skill-badge">Kubernetes (K3s,K8s,EKS)</span>
+                            <span class="skill-badge">Helm</span>
+                            <span class="skill-badge">Kong </span>
+                            <span class="skill-badge">MetalLB</span>
+                            <span class="skill-badge">Longhorn Storage</span>
+                            <span class="skill-badge">Lens</span>
+                            <span class="skill-badge">Rancher</span>
+                        </div>
+                    </div>
+
+                    <!-- 3. Automation & DevOps -->
+                    <div class="skill-card" data-reveal>
+                        <h3><i data-lucide="zap"></i> Automation & DevOps</h3>
+                        <div class="skill-list">
+                            <span class="skill-badge">n8n Workflow</span>
+                            <span class="skill-badge">Terraform (IaC)</span>
+                            <span class="skill-badge">CI/CD Design</span>
+                            <span class="skill-badge">Nginx Proxy</span>
+                        </div>
+                    </div>
+
+                    <!-- 4. GitOps & CI/CD -->
+                    <div class="skill-card" data-reveal>
+                        <h3><i data-lucide="git-branch"></i> GitOps & CI/CD</h3>
+                        <div class="skill-list">
+                            <span class="skill-badge">GitHub / GitLab</span>
+                            <span class="skill-badge">Jenkins</span>
+                            <span class="skill-badge">ArgoCD (GitOps)</span>
+                            <span class="skill-badge">GHCR (GitHub Container Registry)</span>
+                            <span class="skill-badge">Automated CI/CD Pipelines</span>
+                            <span class="skill-badge">SonarQube (Code Quality Analysis)</span>
+                        </div>
+                    </div>
+
+                    <!-- 5. Monitoring & Observability -->
+                    <div class="skill-card" data-reveal>
+                        <h3><i data-lucide="activity"></i> Monitoring & Observability</h3>
+                        <div class="skill-list">
+                            <span class="skill-badge">Prometheus Metrics Collection</span>
+                            <span class="skill-badge">Grafana Dashboard Visualization</span>
+                            <span class="skill-badge">Centralized Web Monitoring Platform</span>
+                            <span class="skill-badge">Kubernetes & Cluster Health Monitoring</span>
+                            <span class="skill-badge">Automated Alerting Workflow (n8n)</span>
+                            <span class="skill-badge">Uptime Kuma Imprement </span>
+                        </div>
+                    </div>
+
+                    <!-- 6. Infrastructure & Cloud -->
+                    <div class="skill-card" data-reveal>
+                        <h3><i data-lucide="cloud"></i> Infrastructure & Cloud</h3>
+                        <div class="skill-list">
+                            <span class="skill-badge">Data Center Ops</span>
+                            <span class="skill-badge">IaaS / DRaaS / BaaS</span>
+                            <span class="skill-badge">AWS (S3, EKS, Aorora ,ECS.EFS ,EBS ,ACM ,IAM,Bedrock)</span>
+                            <span class="skill-badge">local cloud (Vcloud)</span>
+                            <span class="skill-badge">High Availability</span>
+                            <span class="skill-badge">Load Balancing</span>
+                        </div>
+                    </div>
+
+                    <!-- 7. Virtualization -->
+                    <div class="skill-card" data-reveal>
+                        <h3><i data-lucide="layers"></i> Virtualization</h3>
+                        <div class="skill-list">
+                            <span class="skill-badge">VMware vSphere</span>
+                            <span class="skill-badge">Nutanix AHV</span>
+                            <span class="skill-badge">ESXi</span>
+                            <span class="skill-badge">Hyper-V</span>
+                        </div>
+                    </div>
+
+                    <!-- 8. Backup & DR -->
+                    <div class="skill-card" data-reveal>
+                        <h3><i data-lucide="hard-drive"></i> Backup & DR</h3>
+                        <div class="skill-list">
+                            <span class="skill-badge">Veeam Backup</span>
+                            <span class="skill-badge">Veritas Backup</span>
+                            <span class="skill-badge">Replication</span>
+                            <span class="skill-badge">NAS</span>
+                            <span class="skill-badge">Business Continuity</span>
+                        </div>
+                    </div>
+
+                    <!-- 9. OS & Scripting -->
+                    <div class="skill-card" data-reveal>
+                        <h3><i data-lucide="terminal"></i> OS & Scripting</h3>
+                        <div class="skill-list">
+                            <span class="skill-badge">Windows Server</span>
+                            <span class="skill-badge">Ubuntu Linux</span>
+                            <span class="skill-badge">Rocky Linux</span>
+                            <span class="skill-badge">PowerShell</span>
+                            <span class="skill-badge">Phyton Script</Script></span>
+                            <span class="skill-badge">Bash Scripting</span>
+                        </div>
+                    </div>
+
+                    <!-- 10. Architecture & Design -->
+                    <div class="skill-card" data-reveal style="grid-column: 1 / -1;">
+                        <h3><i data-lucide="pen-tool"></i> Architecture & Solution Design</h3>
+                        <div class="skill-list" style="justify-content: center;">
+                            <span class="skill-badge">Infra Architecture</span>
+                            <span class="skill-badge">DR Architecture</span>
+                            <span class="skill-badge">Hybrid Cloud Design</span>
+                            <span class="skill-badge">Scalability Planning</span>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
