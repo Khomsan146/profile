@@ -93,16 +93,12 @@
 
         <div class="stat-grid" data-reveal>
             <div class="stat-card">
-                <span class="stat-number">40%</span>
                 <span>Latency Reduction</span>
             </div>
             <div class="stat-card">
                 <span class="stat-number">ZERO</span>
                 <span>Downtime Cutover</span>
             </div>
-            <div class="stat-card">
-                <span class="stat-number">100%</span>
-                <span>Compliance met</span>
             </div>
         </div>
 
@@ -117,15 +113,27 @@
             <h2>The Solution</h2>
             <p>Designed a phased migration strategy using Infrastructure as Code (Terraform) to replicate the
                 environment exactly.</p>
-            <ul class="responsibilities-list" style="margin-top: 1.5rem;">
-                <li><strong>Infrastructure Replication:</strong> Used Terraform modules to spin up a mirror VPC and EKS
-                    cluster in the Thailand region.</li>
-                <li><strong>Data Sync:</strong> Implemented real-time database replication (RDS Read Replicas)
-                    cross-region before promoting the TH node throughout the cutover window.</li>
-                <li><strong>Application State:</strong> Utilized Velero for backing up and restoring cluster resources
-                    (ConfigMaps, Secrets) to ensuring seamless configuration transfer.</li>
-                <li><strong>Traffic Cutover:</strong> Managed DNS weight-based routing via Route53 to gradually shift
-                    user traffic, monitoring error rates at every step.</li>
+    <ul class="responsibilities-list" style="margin-top: 1.5rem;">
+
+    <li><strong>Private Infrastructure Design:</strong> Designed and provisioned a private VPC architecture using Terraform, 
+        establishing isolated Prod and UAT environments with segmented subnets and controlled network policies.</li>
+
+    <li><strong>Secure Connectivity:</strong> Implemented and validated Site-to-Site VPN connectivity to dependent environments, 
+        enforcing least-privilege network access to ensure secure cross-environment communication.</li>
+
+    <li><strong>CI/CD Validation:</strong> Leveraged ArgoCD with Helm charts to manage application deployments, 
+        performing UAT validation to ensure configuration consistency and deployment integrity prior to production migration.</li>
+
+    <li><strong>Traffic & TLS Management:</strong> Configured Kong Ingress Controller with AWS ACM for SSL/TLS termination, 
+        managing secure traffic routing and load distribution within the Kubernetes cluster.</li>
+
+    <li><strong>Shared Storage Architecture:</strong> Implemented Amazon EFS for shared persistent storage across nodes, 
+        and utilized EBS-backed volumes for stateful workloads requiring high-performance block storage.</li>
+
+    <li><strong>Seamless Migration Strategy:</strong> Executed a zero-downtime migration by pre-provisioning the new environment, 
+        validating workloads in advance, and performing final cutover by updating DNS records to point to the Kong Ingress endpoint.</li>
+
+</ul>
             </ul>
         </div>
 
@@ -134,8 +142,8 @@
             <div class="tech-stack-grid">
                 <div class="tech-item">AWS EKS</div>
                 <div class="tech-item">Terraform</div>
-                <div class="tech-item">Velero</div>
-                <div class="tech-item">Route53</div>
+                <div class="tech-item">Kong</div>
+                <div class="tech-item">EBS-</div>
                 <div class="tech-item">ArgoCD</div>
                 <div class="tech-item">Helm</div>
             </div>
