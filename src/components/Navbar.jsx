@@ -2,6 +2,14 @@ import { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
 
+const NAV_LINKS = [
+    { id: '#about', label: 'About' },
+    { id: '#skills', label: 'Skills' },
+    { id: '#projects', label: 'Projects' },
+    { id: '#mindset', label: 'Mindset' },
+    { id: '#contact', label: 'Contact' },
+]
+
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false)
     const [open, setOpen] = useState(false)
@@ -37,8 +45,8 @@ export default function Navbar() {
                                 <span /><span /><span />
                             </button>
                             <ul className={`nav-links${open ? ' open' : ''}`}>
-                                {['#about', '#skills', '#projects', '#contact'].map(id => (
-                                    <li key={id}><a onClick={() => scrollTo(id)}>{id.slice(1).charAt(0).toUpperCase() + id.slice(2)}</a></li>
+                                {NAV_LINKS.map(({ id, label }) => (
+                                    <li key={id}><a onClick={() => scrollTo(id)}>{label}</a></li>
                                 ))}
                             </ul>
                         </>

@@ -1,12 +1,5 @@
 import ScrollReveal from '../components/ScrollReveal'
-import { Cloud, Terminal, RefreshCw, Shield } from 'lucide-react'
-
-const FEATURES = [
-    { icon: <Cloud size={24} />, title: 'Cloud Architecture', desc: 'Designing resilient multi-cloud and hybrid infrastructure on AWS, GCP, and Azure.' },
-    { icon: <Terminal size={24} />, title: 'Infrastructure as Code', desc: 'Terraform, Ansible, and Helm for automated, version-controlled infrastructure.' },
-    { icon: <RefreshCw size={24} />, title: 'CI/CD Pipelines', desc: 'Building GitLab CI and GitHub Actions pipelines for fast, reliable deployments.' },
-    { icon: <Shield size={24} />, title: 'Security & Compliance', desc: 'FortiGate, WAF, Cloudflare, and Zero Trust security practices.' },
-]
+import { Server, Activity } from 'lucide-react'
 
 export default function About() {
     return (
@@ -15,19 +8,31 @@ export default function About() {
                 <ScrollReveal>
                     <h2 className="section-title">About <span>Me</span></h2>
                     <div className="about-grid">
-                        <p style={{ color: '#94a3b8', lineHeight: 1.8, fontSize: '1rem', marginBottom: '2.5rem' }}>
-                            I'm an Infrastructure Engineer passionate about building reliable, automated, and scalable systems.
-                            With deep experience in enterprise environments, I bridge the gap between on-premise legacy systems
-                            and modern cloud-native platforms—delivering solutions that are secure, observable, and resilient.
-                        </p>
+                        <div style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '2rem' }}>
+                            <p style={{ marginBottom: '1rem' }}>
+                                I am an Infrastructure Reliability Engineer focused on bridging the gap between traditional
+                                operations and modern DevOps practices. My expertise lies in building{' '}
+                                <strong style={{ color: '#f1f5f9' }}>enterprise-grade hybrid cloud architectures</strong>{' '}
+                                that are secure, scalable, and highly available.
+                            </p>
+                            <p>
+                                I specialize in <strong style={{ color: '#f1f5f9' }}>automation-driven operations</strong>,
+                                using tools like Terraform and n8n to eliminate toil and streamline workflows. My goal is to
+                                ensure system reliability while enabling rapid delivery through robust CI/CD pipelines and
+                                observability stacks.
+                            </p>
+                        </div>
                         <div className="features-grid">
-                            {FEATURES.map((f) => (
-                                <div className="feature-card" key={f.title}>
-                                    <div className="feature-icon">{f.icon}</div>
-                                    <h3>{f.title}</h3>
-                                    <p>{f.desc}</p>
-                                </div>
-                            ))}
+                            <div className="feature-card">
+                                <div className="feature-icon"><Server size={24} /></div>
+                                <h3>Infrastructure</h3>
+                                <p>Data Center &amp; Cloud (IaaS, DRaaS)</p>
+                            </div>
+                            <div className="feature-card">
+                                <div className="feature-icon"><Activity size={24} /></div>
+                                <h3>Monitoring</h3>
+                                <p>Centralized Dashboards &amp; Visibility</p>
+                            </div>
                         </div>
                     </div>
                 </ScrollReveal>
