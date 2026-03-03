@@ -1,143 +1,77 @@
 import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import ScrollReveal from '../components/ScrollReveal'
+import { projects } from '../data/projects'
 import ImageLightbox from '../components/ImageLightbox'
-import projects from '../data/projects'
+import { ArrowLeft } from 'lucide-react'
 
 export default function ProjectDetail() {
     const { slug } = useParams()
     const navigate = useNavigate()
-    const [lightboxSrc, setLightboxSrc] = useState(null)
+    const [lightbox, setLightbox] = useState(null)
 
-    const project = projects.find((p) => p.slug === slug)
-
-    if (!project) {
-        return (
-            <main className="container" style={{ paddingTop: '140px', textAlign: 'center' }}>
-                <h1>Project not found</h1>
-                <button className="btn btn-primary" onClick={() => navigate('/')} style={{ marginTop: '2rem' }}>
-                    Back to Home
-                </button>
-            </main>
-        )
-    }
-
-    const openImage = (src) => setLightboxSrc(src)
-    const closeImage = () => setLightboxSrc(null)
+    const project = projects.find(p => p.slug === slug)
+    if (!project) return (
+        <div style={{ padding: '8rem 2rem', textAlign: 'center' }}>
+            <h2>Project not found</h2>
+            <button className="btn btn-primary" style={{ marginTop: '1rem' }} onClick={() => navigate('/')}>Go Home</button>
+        </div>
+    )
 
     return (
-        <>
-            <main className="container">
-                {/* Hero */}
-                <ScrollReveal>
-                    <section className="project-hero">
-                        <span className="hero-label">{project.label}</span>
-                        <h1>
-                            {project.titleParts.before}
-                            <span className="gradient-text">{project.titleParts.gradient}</span>
-                            {project.titleParts.after}
-                        </h1>
-                        <p style={{ fontSize: '1.2rem', color: '#94a3b8', maxWidth: '800px', marginTop: '1rem' }}>
-                            {project.description}
-                        </p>
-                    </section>
-                </ScrollReveal>
+        <section className="project-detail">
+            <div className="container">
+                <button className="btn btn-outline" style={{ marginBottom: '2rem' }} onClick={() => navigate('/')}>
+                    <ArrowLeft size={16} /> Back to Projects
+                </button>
 
-                {/* Gallery (2-col grid) or Single image */}
-                {project.gallery ? (
-                    <ScrollReveal>
-                        <div
-                            className="project-gallery"
-                            style={project.galleryHeight ? undefined : undefined}
-                        >
-                            {project.gallery.map((img) => (
-                                <img
-                                    key={img.src}
-                                    src={img.src}
-                                    className="project-img"
-                                    alt={img.alt}
-                                    style={{ height: project.galleryHeight ? `${project.galleryHeight}px` : '250px' }}
-                                    onClick={() => openImage(img.src)}
-                                />
-                            ))}
+                <div className="detail-hero">
+                    <div>
+                        <div className="project-tags" style={{ marginBottom: '1rem' }}>
+                            {project.tags.map(t => <span className="project-tag" key={t}>{t}</span>)}
                         </div>
-                    </ScrollReveal>
-                ) : project.singleImage ? (
-                    <ScrollReveal>
-                        <img
-                            src={project.singleImage}
-                            className="img-large"
-                            alt={project.title}
-                            onClick={() => openImage(project.singleImage)}
-                        />
-                    </ScrollReveal>
-                ) : null}
+                        <h1 style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '1rem' }}>{project.title}</h1>
+                        <p style={{ color: '#94a3b8', lineHeight: 1.8 }}>{project.desc}</p>
+                    </div>
+                    <img src={project.image} alt={project.title} style={{ width: '100%', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.08)', objectFit: 'cover', height: '300px' }}
+                        onError={e => { e.target.style.background = 'rgba(59,130,246,0.1)'; e.target.style.border = '1px solid rgba(59,130,246,0.2)' }} />
+                </div>
 
-                {/* Stats */}
-                <ScrollReveal>
-                    <div className="stat-grid">
-                        {project.stats.map((s) => (
-                            <div className="stat-card" key={s.label}>
-                                <span className="stat-number">{s.value}</span>
-                                <span style={{ color: '#94a3b8' }}>{s.label}</span>
-                            </div>
+                <div className="detail-stats">
+                    {project.stats.map(s => (
+                        <div className="stat-card" key={s.lbl}>
+                            <div className="val">{s.val}</div>
+                            <div className="lbl">{s.lbl}</div>
+                        </div>
+                    ))}
+                </div>
+
+                {project.gallery.length > 0 && (
+                    <div className="gallery">
+                        {project.gallery.map((img, i) => (
+                            <img key={i} src={img} alt={`${project.title} ${i + 1}`} onClick={() => setLightbox({ src: img, alt: `${project.title} ${i + 1}` })} />
                         ))}
                     </div>
-                </ScrollReveal>
+                )}
 
-                {/* Challenge */}
-                <ScrollReveal>
-                    <div className="content-section">
-                        <h2>The Challenge</h2>
-                        <p style={{ color: '#94a3b8' }}>{project.challenge}</p>
+                <div className="detail-section">
+                    <h2>Challenge</h2>
+                    <p>{project.challenge}</p>
+                </div>
+
+                <div className="detail-section">
+                    <h2>Solution</h2>
+                    <p>{project.solution}</p>
+                </div>
+
+                <div className="detail-section">
+                    <h2>Tech Stack</h2>
+                    <div className="tech-stack">
+                        {project.tech.map(t => <span className="tech-badge" key={t}>{t}</span>)}
                     </div>
-                </ScrollReveal>
+                </div>
+            </div>
 
-                {/* Solution */}
-                <ScrollReveal>
-                    <div className="content-section">
-                        <h2>The Solution</h2>
-                        <p style={{ color: '#94a3b8' }}>{project.solution.intro}</p>
-
-                        {/* Grid of solution items (n8n style) */}
-                        {project.solution.items && (
-                            <div className="solution-grid">
-                                {project.solution.items.map((item) => (
-                                    <div className="solution-item" key={item.title}>
-                                        <h3>{item.title}</h3>
-                                        <p style={{ color: '#94a3b8' }}>{item.desc}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        )}
-
-                        {/* Bullet list style */}
-                        {project.solution.listItems && (
-                            <ul className="responsibilities-list" style={{ marginTop: '1.5rem' }}>
-                                {project.solution.listItems.map((item) => (
-                                    <li key={item.title}>
-                                        <strong>{item.title}:</strong> {item.desc}
-                                    </li>
-                                ))}
-                            </ul>
-                        )}
-                    </div>
-                </ScrollReveal>
-
-                {/* Tech Stack */}
-                <ScrollReveal>
-                    <div className="content-section">
-                        <h2>Tech Stack</h2>
-                        <div className="tech-stack-grid">
-                            {project.techStack.map((tech) => (
-                                <div className="tech-item" key={tech}>{tech}</div>
-                            ))}
-                        </div>
-                    </div>
-                </ScrollReveal>
-            </main>
-
-            <ImageLightbox src={lightboxSrc} onClose={closeImage} />
-        </>
+            {lightbox && <ImageLightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
+        </section>
     )
 }

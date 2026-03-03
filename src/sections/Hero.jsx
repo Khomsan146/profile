@@ -3,10 +3,7 @@ import ScrollReveal from '../components/ScrollReveal'
 export default function Hero() {
     const scrollTo = (id) => {
         const el = document.querySelector(id)
-        if (el) {
-            const offset = el.getBoundingClientRect().top + window.pageYOffset - 80
-            window.scrollTo({ top: offset, behavior: 'smooth' })
-        }
+        if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 80, behavior: 'smooth' })
     }
 
     return (
@@ -31,16 +28,12 @@ export default function Hero() {
                                 automated, and resilient systems.
                             </p>
                             <div className="cta-group">
-                                <button className="btn btn-primary" onClick={() => scrollTo('#projects')}>
-                                    View Projects
-                                </button>
-                                <button className="btn btn-outline" onClick={() => scrollTo('#contact')}>
-                                    Contact Me
-                                </button>
+                                <button className="btn btn-primary" onClick={() => scrollTo('#projects')}>View Projects</button>
+                                <button className="btn btn-outline" onClick={() => scrollTo('#contact')}>Contact Me</button>
                             </div>
                         </div>
                         <div className="hero-image">
-                            <img src="/images/profile.jpg" alt="Golf Khomsan – Infrastructure Reliability Engineer" />
+                            <img src="/images/profile.jpg" alt="Golf Khomsan – Infrastructure Engineer" />
                         </div>
                     </div>
                 </ScrollReveal>

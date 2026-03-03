@@ -1,32 +1,18 @@
-import { useEffect, useRef, cloneElement } from 'react'
+import { useEffect, useRef } from 'react'
 
-/**
- * Wraps a single child element with scroll-reveal animation.
- * The child must accept a ref. Pass className via child if needed,
- * or use the `className` prop here to add to the wrapper div.
- */
-export default function ScrollReveal({ children, delay = 0, className = '' }) {
+export default function ScrollReveal({ children }) {
     const ref = useRef(null)
 
     useEffect(() => {
         const el = ref.current
         if (!el) return
-
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => el.classList.add('active'), delay)
-                }
-            },
-            { threshold: 0.1, rootMargin: '0px 0px -100px 0px' }
+        const obs = new IntersectionObserver(
+            ([entry]) => { if (entry.isIntersecting) { el.classList.add('visible'); obs.disconnect() } },
+            { threshold: 0.1 }
         )
-        observer.observe(el)
-        return () => observer.disconnect()
-    }, [delay])
+        obs.observe(el)
+        return () => obs.disconnect()
+    }, [])
 
-    return (
-        <div ref={ref} data-reveal className={className}>
-            {children}
-        </div>
-    )
+    return <div className="reveal" ref={ref}>{children}</div>
 }

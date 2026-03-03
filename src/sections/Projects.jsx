@@ -1,71 +1,55 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { Award, Cloud, ShieldCheck } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 import ScrollReveal from '../components/ScrollReveal'
 import CertModal from '../components/CertModal'
-import projects from '../data/projects'
+import { Award } from 'lucide-react'
+import { projects } from '../data/projects'
 
 const CERTS = [
-    { key: 'rcna', icon: <Award size={18} />, label: 'RCNA' },
-    { key: 'vmtsp', icon: <Cloud size={18} />, label: 'VMTSP' },
-    { key: 'cc', icon: <ShieldCheck size={18} />, label: 'CC' },
+    { name: 'AWS Solutions Architect', issuer: 'Amazon Web Services', date: '2023', credentialId: 'AWS-SAA-001' },
+    { name: 'HashiCorp Terraform Associate', issuer: 'HashiCorp', date: '2023', credentialId: 'TF-001' },
+    { name: 'Certified Kubernetes Administrator', issuer: 'CNCF', date: '2024', credentialId: 'CKA-001' },
+    { name: 'Google Cloud Associate', issuer: 'Google Cloud', date: '2024', credentialId: 'GCP-ACE-001' },
 ]
 
 export default function Projects() {
-    const [activeCert, setActiveCert] = useState(null)
+    const navigate = useNavigate()
+    const [selectedCert, setSelectedCert] = useState(null)
 
     return (
         <section id="projects">
             <div className="container">
                 <ScrollReveal>
-                    <h2 className="section-title">Featured Projects</h2>
-                </ScrollReveal>
-
-                <ScrollReveal delay={50}>
+                    <h2 className="section-title">Featured <span>Projects</span></h2>
                     <div className="projects-grid">
                         {projects.map((p) => (
-                            <Link to={`/project/${p.slug}`} className="project-card" key={p.slug}>
-                                <div className="project-image">
-                                    <img src={p.image} alt={p.title} />
-                                </div>
-                                <div className="project-content">
-                                    <span className="hero-label" style={{ marginBottom: '0.75rem', display: 'inline-block' }}>
-                                        {p.label}
-                                    </span>
+                            <div className="project-card" key={p.slug} onClick={() => navigate(`/project/${p.slug}`)}>
+                                <img className="project-img" src={p.image} alt={p.title} onError={e => { e.target.style.background = 'rgba(59,130,246,0.1)'; e.target.style.height = '200px' }} />
+                                <div className="project-body">
+                                    <div className="project-tags">{p.tags.map(t => <span className="project-tag" key={t}>{t}</span>)}</div>
                                     <h3>{p.title}</h3>
-                                    <p>{p.cardDescription}</p>
-                                    <div className="project-tags">
-                                        {p.tags.map((t) => (
-                                            <span className="tag" key={t}>{t}</span>
-                                        ))}
-                                    </div>
+                                    <p>{p.desc}</p>
+                                    <span className="project-link">View Details →</span>
                                 </div>
-                            </Link>
+                            </div>
+                        ))}
+                    </div>
+
+                    <h2 className="section-title" style={{ marginTop: '4rem' }}>Certifications <span>&amp; Achievements</span></h2>
+                    <div className="certs-grid">
+                        {CERTS.map((c) => (
+                            <div className="cert-card" key={c.name} onClick={() => setSelectedCert(c)}>
+                                <div className="cert-icon"><Award size={28} /></div>
+                                <div>
+                                    <h4>{c.name}</h4>
+                                    <p>{c.issuer} · {c.date}</p>
+                                </div>
+                            </div>
                         ))}
                     </div>
                 </ScrollReveal>
-
-                {/* Certifications */}
-                <ScrollReveal delay={100}>
-                    <div style={{ marginTop: '5rem' }}>
-                        <h2 className="section-title">Certifications</h2>
-                        <div className="certifications-wrapper" style={{ marginTop: '3rem' }}>
-                            {CERTS.map((c) => (
-                                <button
-                                    key={c.key}
-                                    className="cert-badge"
-                                    onClick={() => setActiveCert(c.key)}
-                                >
-                                    {c.icon}
-                                    <span>{c.label}</span>
-                                </button>
-                            ))}
-                        </div>
-                    </div>
-                </ScrollReveal>
             </div>
-
-            <CertModal certKey={activeCert} onClose={() => setActiveCert(null)} />
+            <CertModal cert={selectedCert} onClose={() => setSelectedCert(null)} />
         </section>
     )
 }

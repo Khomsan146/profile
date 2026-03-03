@@ -2,7 +2,7 @@ export default function Footer() {
     return (
         <footer>
             <div className="container">
-                <p>© 2026 Golf Khomsan. All rights reserved.</p>
+                <p>© {new Date().getFullYear()} Golf Khomsan · Infrastructure Engineer</p>
             </div>
         </footer>
     )

@@ -5,7 +5,7 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import ProjectDetail from './pages/ProjectDetail'
 
-function App() {
+export default function App() {
   return (
     <>
       <BackgroundCanvas />
@@ -18,5 +18,3 @@ function App() {
     </>
   )
 }
-
-export default App

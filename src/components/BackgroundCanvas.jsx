@@ -1,64 +1,64 @@
 import { useEffect, useRef } from 'react'
 
-class Particle {
-    constructor(canvas) {
-        this.canvas = canvas
-        this.reset()
-    }
-    reset() {
-        this.x = Math.random() * this.canvas.width
-        this.y = Math.random() * this.canvas.height
-        this.size = Math.random() * 2 + 0.5
-        this.speedX = Math.random() * 0.5 - 0.25
-        this.speedY = Math.random() * 0.5 - 0.25
-        this.opacity = Math.random() * 0.5 + 0.2
-    }
-    update() {
-        this.x += this.speedX
-        this.y += this.speedY
-        if (this.x < 0 || this.x > this.canvas.width) this.speedX *= -1
-        if (this.y < 0 || this.y > this.canvas.height) this.speedY *= -1
-    }
-    draw(ctx) {
-        ctx.fillStyle = `rgba(59, 130, 246, ${this.opacity})`
-        ctx.beginPath()
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
-        ctx.fill()
-    }
-}
-
 export default function BackgroundCanvas() {
     const canvasRef = useRef(null)
 
     useEffect(() => {
         const canvas = canvasRef.current
         const ctx = canvas.getContext('2d')
-        let particles = []
         let animId
 
-        const init = () => {
+        const resize = () => {
             canvas.width = window.innerWidth
             canvas.height = window.innerHeight
-            particles = Array.from({ length: 60 }, () => new Particle(canvas))
         }
+        resize()
+        window.addEventListener('resize', resize)
 
-        const animate = () => {
+        const particles = Array.from({ length: 80 }, () => ({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            vx: (Math.random() - 0.5) * 0.5,
+            vy: (Math.random() - 0.5) * 0.5,
+            size: Math.random() * 2 + 0.5,
+            opacity: Math.random() * 0.5 + 0.1,
+        }))
+
+        const draw = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height)
-            particles.forEach(p => { p.update(); p.draw(ctx) })
-            animId = requestAnimationFrame(animate)
+            particles.forEach(p => {
+                p.x += p.vx; p.y += p.vy
+                if (p.x < 0) p.x = canvas.width
+                if (p.x > canvas.width) p.x = 0
+                if (p.y < 0) p.y = canvas.height
+                if (p.y > canvas.height) p.y = 0
+                ctx.beginPath()
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
+                ctx.fillStyle = `rgba(59,130,246,${p.opacity})`
+                ctx.fill()
+            })
+            particles.forEach((a, i) => {
+                particles.slice(i + 1).forEach(b => {
+                    const dist = Math.hypot(a.x - b.x, a.y - b.y)
+                    if (dist < 120) {
+                        ctx.beginPath()
+                        ctx.moveTo(a.x, a.y)
+                        ctx.lineTo(b.x, b.y)
+                        ctx.strokeStyle = `rgba(59,130,246,${0.15 * (1 - dist / 120)})`
+                        ctx.lineWidth = 0.5
+                        ctx.stroke()
+                    }
+                })
+            })
+            animId = requestAnimationFrame(draw)
         }
-
-        const onResize = () => { init() }
-
-        init()
-        animate()
-        window.addEventListener('resize', onResize)
+        draw()
 
         return () => {
             cancelAnimationFrame(animId)
-            window.removeEventListener('resize', onResize)
+            window.removeEventListener('resize', resize)
         }
     }, [])
 
-    return <canvas id="bg-canvas" ref={canvasRef} />
+    return <canvas id="bg" ref={canvasRef} />
 }

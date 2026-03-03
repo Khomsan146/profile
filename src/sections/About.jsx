@@ -2,65 +2,30 @@ import ScrollReveal from '../components/ScrollReveal'
 import { Cloud, Terminal, RefreshCw, Shield } from 'lucide-react'
 
 const FEATURES = [
-    { icon: <Cloud size={24} />, title: 'Cloud Architecture', desc: 'AWS, Multi-Cloud & Hybrid Design' },
-    { icon: <Terminal size={24} />, title: 'Infrastructure as Code', desc: 'Terraform, Helm, GitOps' },
-    { icon: <RefreshCw size={24} />, title: 'CI/CD & Automation', desc: 'GitLab CI, GitHub Actions, ArgoCD' },
-    { icon: <Shield size={24} />, title: 'Security & Networking', desc: 'Fortigate, VPN, Zero Trust' },
+    { icon: <Cloud size={24} />, title: 'Cloud Architecture', desc: 'Designing resilient multi-cloud and hybrid infrastructure on AWS, GCP, and Azure.' },
+    { icon: <Terminal size={24} />, title: 'Infrastructure as Code', desc: 'Terraform, Ansible, and Helm for automated, version-controlled infrastructure.' },
+    { icon: <RefreshCw size={24} />, title: 'CI/CD Pipelines', desc: 'Building GitLab CI and GitHub Actions pipelines for fast, reliable deployments.' },
+    { icon: <Shield size={24} />, title: 'Security & Compliance', desc: 'FortiGate, WAF, Cloudflare, and Zero Trust security practices.' },
 ]
 
 export default function About() {
     return (
-        <section id="about">
+        <section id="about" style={{ background: 'rgba(17,24,39,0.5)' }}>
             <div className="container">
                 <ScrollReveal>
+                    <h2 className="section-title">About <span>Me</span></h2>
                     <div className="about-grid">
-                        <div className="about-text">
-                            <h2 className="section-title">About Me</h2>
-                            <p>
-                                I am an Infrastructure Reliability Engineer with 4+ years of experience designing
-                                and operating enterprise-grade systems. My expertise spans hybrid cloud architecture,
-                                Kubernetes orchestration, CI/CD automation, and network security.
-                            </p>
-                            <p>
-                                I specialize in bridging legacy on-premise environments with modern cloud-native
-                                platforms—ensuring zero-downtime migrations, automated operations, and measurable
-                                reliability improvements for critical business workloads.
-                            </p>
-                            <p>
-                                Currently focused on AWS-based infrastructure, DevOps toolchains, and building
-                                self-healing systems that reduce operational overhead while increasing uptime.
-                            </p>
-                        </div>
-
-                        <div className="about-features">
-                            {FEATURES.map((f) => (
-                                <div className="feature-item" key={f.title}>
-                                    <i>{f.icon}</i>
-                                    <h4>{f.title}</h4>
-                                    <p style={{ color: '#94a3b8', fontSize: '0.9rem', marginTop: '0.25rem' }}>{f.desc}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </ScrollReveal>
-
-                {/* Architecture Mindset */}
-                <ScrollReveal delay={100}>
-                    <div className="mindset-container" style={{ marginTop: '5rem' }}>
-                        <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Architecture Mindset</h2>
-                        <p style={{ color: '#94a3b8', maxWidth: '600px', margin: '0 auto' }}>
-                            Every infrastructure decision is guided by these core principles.
+                        <p style={{ color: '#94a3b8', lineHeight: 1.8, fontSize: '1rem', marginBottom: '2.5rem' }}>
+                            I'm an Infrastructure Engineer passionate about building reliable, automated, and scalable systems.
+                            With deep experience in enterprise environments, I bridge the gap between on-premise legacy systems
+                            and modern cloud-native platforms—delivering solutions that are secure, observable, and resilient.
                         </p>
-                        <div className="mindset-grid">
-                            {[
-                                { title: 'Reliability First', desc: 'Design for failure; build for 99.9%+ uptime' },
-                                { title: 'Automate Everything', desc: 'Eliminate toil; every manual process is a bug' },
-                                { title: 'Security by Design', desc: 'Zero trust, least privilege from the ground up' },
-                                { title: 'Cost Awareness', desc: 'Right-size, optimize, and continuously measure spend' },
-                            ].map((m) => (
-                                <div className="mindset-item" key={m.title}>
-                                    <h4>{m.title}</h4>
-                                    <p style={{ color: '#94a3b8', fontSize: '0.9rem' }}>{m.desc}</p>
+                        <div className="features-grid">
+                            {FEATURES.map((f) => (
+                                <div className="feature-card" key={f.title}>
+                                    <div className="feature-icon">{f.icon}</div>
+                                    <h3>{f.title}</h3>
+                                    <p>{f.desc}</p>
                                 </div>
                             ))}
                         </div>

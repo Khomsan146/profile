@@ -1,29 +1,21 @@
 import { useEffect } from 'react'
 
-export default function ImageLightbox({ src, onClose }) {
+export default function ImageLightbox({ src, alt, onClose }) {
     useEffect(() => {
-        if (!src) return
-        const handler = (e) => { if (e.key === 'Escape') onClose() }
-        window.addEventListener('keydown', handler)
-        // prevent scroll
+        const onKey = (e) => { if (e.key === 'Escape') onClose() }
+        document.addEventListener('keydown', onKey)
         document.body.style.overflow = 'hidden'
         return () => {
-            window.removeEventListener('keydown', handler)
+            document.removeEventListener('keydown', onKey)
             document.body.style.overflow = ''
         }
-    }, [src, onClose])
+    }, [onClose])
 
     if (!src) return null
-
     return (
-        <div
-            id="imageModal"
-            className="active"
-            onClick={(e) => { if (e.target === e.currentTarget) onClose() }}
-        >
-            <button id="imageModalClose" onClick={onClose}>×</button>
-            <img id="imageModalImg" src={src} alt="Project detail" />
-            <div id="imageModalCaption" className="zoom-hint">Click outside or press Esc to close</div>
+        <div className="lightbox-overlay" onClick={onClose}>
+            <button className="lightbox-close" onClick={onClose}>×</button>
+            <img className="lightbox-img" src={src} alt={alt} onClick={e => e.stopPropagation()} />
         </div>
     )
 }

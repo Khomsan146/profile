@@ -1,42 +1,22 @@
 import { useEffect } from 'react'
 
-const CERT_DATA = {
-    rcna: {
-        title: 'Ruijie Certified Network Associate (RCNA)',
-        description:
-            'Validates comprehensive knowledge in network fundamentals, WLAN setup, and routing/switching configurations using Ruijie enterprise equipment. Demonstrates ability to design and implement small to medium-sized enterprise networks.',
-    },
-    vmtsp: {
-        title: 'Veeam Microsoft Technical Sales Professional (VMTSP)',
-        description:
-            'Demonstrates advanced expertise in designing Veeam backup solutions integrated with Microsoft technologies. Covers deep integration with Hyper-V, Azure, and Windows Server for robust disaster recovery strategies.',
-    },
-    cc: {
-        title: 'Certified in Cybersecurity (CC) - THNCA',
-        description:
-            'Foundational cybersecurity certification by the Thailand National Cyber Security Agency. Covers essential security principles, incident response protocols, risk management, and network defense strategies mandated by national standards.',
-    },
-}
-
-export default function CertModal({ certKey, onClose }) {
-    const cert = CERT_DATA[certKey]
-
-    // Close on Escape key
+export default function CertModal({ cert, onClose }) {
     useEffect(() => {
-        if (!certKey) return
-        const handler = (e) => { if (e.key === 'Escape') onClose() }
-        window.addEventListener('keydown', handler)
-        return () => window.removeEventListener('keydown', handler)
-    }, [certKey, onClose])
+        const onKey = (e) => { if (e.key === 'Escape') onClose() }
+        document.addEventListener('keydown', onKey)
+        return () => document.removeEventListener('keydown', onKey)
+    }, [onClose])
 
-    if (!certKey || !cert) return null
-
+    if (!cert) return null
     return (
-        <div className="modal active" onClick={(e) => { if (e.target === e.currentTarget) onClose() }}>
-            <div className="modal-content">
-                <button className="close-modal" onClick={onClose}>×</button>
-                <h3>{cert.title}</h3>
-                <p>{cert.description}</p>
+        <div className="modal-overlay" onClick={onClose}>
+            <div className="modal-box" onClick={e => e.stopPropagation()}>
+                <button className="modal-close" onClick={onClose}>×</button>
+                <h2 style={{ marginBottom: '1rem' }}>{cert.name}</h2>
+                <p style={{ color: '#94a3b8', marginBottom: '0.5rem' }}>{cert.issuer}</p>
+                <p style={{ color: '#94a3b8', marginBottom: '1rem', fontSize: '0.85rem' }}>{cert.date}</p>
+                {cert.credentialId && <p style={{ fontSize: '0.8rem', color: '#64748b' }}>Credential ID: {cert.credentialId}</p>}
+                {cert.description && <p style={{ marginTop: '1rem', color: '#94a3b8', lineHeight: 1.7, fontSize: '0.9rem' }}>{cert.description}</p>}
             </div>
         </div>
     )
