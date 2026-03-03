@@ -4,8 +4,8 @@ import { ArrowLeft } from 'lucide-react'
 
 const NAV_LINKS = [
     { id: '#about', label: 'About' },
-    { id: '#skills', label: 'Skills' },
     { id: '#projects', label: 'Projects' },
+    { id: '#skills', label: 'Skills' },
     { id: '#mindset', label: 'Mindset' },
     { id: '#contact', label: 'Contact' },
 ]
@@ -37,7 +37,7 @@ export default function Navbar() {
         <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
             <div className="container">
                 <div className="nav-inner">
-                    <a className="nav-logo" onClick={() => scrollTo('#hero')} style={{ cursor: 'pointer' }}>golf@infra:~$</a>
+                    <a className="nav-logo" onClick={() => scrollTo('#hero')} style={{ cursor: 'pointer' }}>Goft Khomsan</a>
 
                     {isHome ? (
                         <>

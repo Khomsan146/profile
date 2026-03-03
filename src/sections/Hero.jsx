@@ -13,8 +13,8 @@ export default function Hero() {
                     <div className="hero-grid">
                         <div className="hero-content">
                             <h1>
-                                Golf Khomsan <br />
-                                <span className="gradient-text">Infrastructure Engineer</span>
+                                I'm <span className="gradient-text">Goft Khomsan</span> <br />
+                                Infrastructure Engineer
                             </h1>
                             <p>
                                 Infrastructure Engineer with DevOps capability, experienced in designing and
@@ -33,7 +33,11 @@ export default function Hero() {
                             </div>
                         </div>
                         <div className="hero-image">
-                            <img src="/images/profile.jpg" alt="Golf Khomsan – Infrastructure Engineer" />
+                            <img
+                                src="/images/profile.jpg"
+                                alt="Goft Khomsan – Infrastructure Engineer"
+                                style={{ borderRadius: '16px', border: '4px solid rgba(59, 130, 246, 0.3)', boxShadow: '0 10px 30px rgba(0,0,0,0.5)' }}
+                            />
                         </div>
                     </div>
                 </ScrollReveal>
