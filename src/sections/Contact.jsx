@@ -18,7 +18,7 @@ export default function Contact() {
                             Ready to build the next generation of infrastructure? Whether it's a new system design or
                             optimizing an existing one, I'm here to help.
                         </p>
-                        <a href="mailto:khomsan.ksb@gmail.com" className="btn btn-primary" style={{ display: 'inline-flex', marginTop: '2rem' }}>
+                        <a href="mailto:khomsan.khsb@gmail.com" className="btn btn-primary" style={{ display: 'inline-flex', marginTop: '2rem' }}>
                             Send an Email
                         </a>
                         <div className="social-links" style={{ alignItems: 'center', justifyContent: 'flex-start' }}>
