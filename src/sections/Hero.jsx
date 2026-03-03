@@ -36,7 +36,6 @@ export default function Hero() {
                             <img
                                 src="/images/profile.jpg"
                                 alt="Goft Khomsan – Infrastructure Engineer"
-                                style={{ borderRadius: '16px', border: '4px solid rgba(59, 130, 246, 0.3)', boxShadow: '0 10px 30px rgba(0,0,0,0.5)' }}
                             />
                         </div>
                     </div>

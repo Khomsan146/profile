@@ -37,7 +37,7 @@ export default function Navbar() {
         <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
             <div className="container">
                 <div className="nav-inner">
-                    <a className="nav-logo" onClick={() => scrollTo('#hero')} style={{ cursor: 'pointer' }}>Goft Khomsan</a>
+                    <a className="nav-logo" onClick={() => scrollTo('#hero')} style={{ cursor: 'pointer' }}>Goft <span className="text-white">Khomsan</span></a>
 
                     {isHome ? (
                         <>
