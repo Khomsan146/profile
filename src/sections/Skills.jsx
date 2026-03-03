@@ -58,12 +58,12 @@ export default function Skills() {
                     <h2 className="section-title">Technical <span>Expertise</span></h2>
 
                     {/* Certifications */}
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '3rem', justifyContent: 'center' }}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '3rem', justifyContent: 'flex-start' }}>
                         {CERTS.map(c => (
                             <span key={c.label} style={{
                                 display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
                                 background: 'rgba(59,130,246,0.1)', border: '1px solid rgba(59,130,246,0.3)',
-                                borderRadius: '8px', padding: '0.5rem 1rem', fontSize: '0.85rem', color: '#93c5fd'
+                                borderRadius: '8px', padding: '0.5rem 1rem', fontSize: 'clamp(0.75rem, 2vw, 0.85rem)', color: '#93c5fd'
                             }}>
                                 🏅 {c.label}
                             </span>

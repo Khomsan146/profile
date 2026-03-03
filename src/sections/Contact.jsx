@@ -11,7 +11,7 @@ export default function Contact() {
             <div className="container">
                 <ScrollReveal>
                     <div className="contact-content">
-                        <h2 className="section-title" style={{ display: 'block', textAlign: 'center' }}>
+                        <h2 className="section-title" style={{ display: 'block', textAlign: 'left' }}>
                             Let's <span>Collaborate</span>
                         </h2>
                         <p style={{ color: '#94a3b8', marginTop: '2rem', fontSize: '1.1rem' }}>
@@ -21,7 +21,7 @@ export default function Contact() {
                         <a href="mailto:khomsan.ksb@gmail.com" className="btn btn-primary" style={{ display: 'inline-flex', marginTop: '2rem' }}>
                             Send an Email
                         </a>
-                        <div className="social-links" style={{ alignItems: 'center' }}>
+                        <div className="social-links" style={{ alignItems: 'center', justifyContent: 'flex-start' }}>
                             {SOCIAL.map((s) => (
                                 <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label}>
                                     <span style={{ fontSize: '1.5rem' }}>{s.icon}</span>

@@ -69,10 +69,10 @@ export default function Responsibilities() {
                         <h2 className="section-title">Core Responsibilities <span>&amp; Achievements</span></h2>
                         {GROUPS.map((g, i) => (
                             <div key={g.title} style={{ marginTop: i === 0 ? 0 : '2.5rem' }}>
-                                <h3 style={{ color: '#06b6d4', fontSize: '1rem', fontWeight: 600, marginBottom: '1rem' }}>{g.title}</h3>
+                                <h3 style={{ color: '#06b6d4', fontSize: 'clamp(1rem, 2.5vw, 1.15rem)', fontWeight: 600, marginBottom: '1rem' }}>{g.title}</h3>
                                 <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                                     {g.items.map((item, j) => (
-                                        <li key={j} style={{ display: 'flex', gap: '0.75rem', color: '#94a3b8', lineHeight: 1.7, fontSize: '0.9rem' }}>
+                                        <li key={j} style={{ display: 'flex', gap: '0.75rem', color: '#94a3b8', lineHeight: 1.7, fontSize: 'clamp(0.85rem, 2vw, 0.95rem)' }}>
                                             <span style={{ color: '#3b82f6', flexShrink: 0, marginTop: '2px' }}>▸</span>
                                             {item}
                                         </li>

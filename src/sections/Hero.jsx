@@ -13,7 +13,7 @@ export default function Hero() {
                     <div className="hero-grid">
                         <div className="hero-content">
                             <h1>
-                                I'm <span className="gradient-text">Goft Khomsan</span> <br />
+                                I'm <span className="gradient-text">Khomsan Khumsombat</span> <br />
                                 Infrastructure Engineer
                             </h1>
                             <p>

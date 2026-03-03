@@ -18,7 +18,7 @@ export default function Mindset() {
                         borderRadius: '20px', padding: '3rem'
                     }}>
                         <h2 className="section-title">Professional <span>Mindset</span></h2>
-                        <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>
+                        <p style={{ color: '#94a3b8', marginBottom: '2rem', fontSize: 'clamp(0.95rem, 2.5vw, 1.1rem)', lineHeight: 1.7 }}>
                             My engineering philosophy is built on five core pillars that ensure long-term stability and business growth.
                         </p>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem' }}>
@@ -27,7 +27,7 @@ export default function Mindset() {
                                     background: 'rgba(59,130,246,0.05)', border: '1px solid rgba(59,130,246,0.2)',
                                     borderRadius: '12px', padding: '1.5rem'
                                 }}>
-                                    <h4 style={{ color: '#06b6d4', marginBottom: '0.5rem', fontSize: '0.95rem' }}>{m.title}</h4>
+                                    <h4 style={{ color: '#06b6d4', marginBottom: '0.5rem', fontSize: 'clamp(0.9rem, 2.5vw, 1.05rem)' }}>{m.title}</h4>
                                     <p style={{ color: '#94a3b8', fontSize: '0.85rem', lineHeight: 1.6 }}>{m.desc}</p>
                                 </div>
                             ))}
