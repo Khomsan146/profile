@@ -1,9 +1,8 @@
 import ScrollReveal from '../components/ScrollReveal'
-import { Github, Mail } from 'lucide-react'
+import { Github, Phone } from 'lucide-react'
 
 const SOCIAL = [
     { href: 'https://github.com/Khomsan146', icon: <Github size={24} />, label: 'GitHub' },
-    { href: 'mailto:golf@example.com', icon: <Mail size={24} />, label: 'Email' },
 ]
 
 export default function Contact() {
@@ -12,20 +11,26 @@ export default function Contact() {
             <div className="container">
                 <ScrollReveal>
                     <div className="contact-content">
-                        <h2 className="section-title" style={{ display: 'block', textAlign: 'center' }}>Get In <span>Touch</span></h2>
+                        <h2 className="section-title" style={{ display: 'block', textAlign: 'center' }}>
+                            Let's <span>Collaborate</span>
+                        </h2>
                         <p style={{ color: '#94a3b8', marginTop: '2rem', fontSize: '1.1rem' }}>
-                            Interested in discussing infrastructure challenges, cloud migrations,
-                            or DevOps best practices? I'm always open to new opportunities and collaborations.
+                            Ready to build the next generation of infrastructure? Whether it's a new system design or
+                            optimizing an existing one, I'm here to help.
                         </p>
-                        <a href="mailto:golf@example.com" className="btn btn-primary" style={{ display: 'inline-flex', marginTop: '2rem' }}>
-                            Send a Message
+                        <a href="mailto:khomsan.ksb@gmail.com" className="btn btn-primary" style={{ display: 'inline-flex', marginTop: '2rem' }}>
+                            Send an Email
                         </a>
-                        <div className="social-links">
+                        <div className="social-links" style={{ alignItems: 'center' }}>
                             {SOCIAL.map((s) => (
                                 <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label}>
                                     <span style={{ fontSize: '1.5rem' }}>{s.icon}</span>
                                 </a>
                             ))}
+                            <a href="tel:0825466908" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#94a3b8', textDecoration: 'none' }}>
+                                <Phone size={24} />
+                                <span style={{ fontSize: '1rem' }}>082-546-6908</span>
+                            </a>
                         </div>
                     </div>
                 </ScrollReveal>
