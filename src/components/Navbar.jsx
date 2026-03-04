@@ -38,7 +38,7 @@ export default function Navbar() {
             <div className="container">
                 <div className="nav-inner">
                     <a className="nav-logo" onClick={() => scrollTo('#hero')} style={{ cursor: 'pointer' }}>
-                        <span className="gradient-text">Goft</span> <span className="text-white">Khomsan</span>
+                        <span style={{ color: '#60a5fa' }}>Golf</span><span style={{ color: '#ffffff' }}>Khomsan</span>
                     </a>
 
                     {isHome ? (
