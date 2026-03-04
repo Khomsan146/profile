@@ -32,7 +32,9 @@ export default function ProjectDetail() {
                         <h1 style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '1rem' }}>{project.title}</h1>
                         <p style={{ color: '#94a3b8', lineHeight: 1.8 }}>{project.desc}</p>
                     </div>
-                    <img src={project.image} alt={project.title} style={{ width: '100%', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.08)', objectFit: 'cover', height: '300px' }}
+                    <img src={project.image} alt={project.title}
+                        style={{ width: '100%', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.08)', objectFit: 'cover', height: '300px', cursor: 'pointer' }}
+                        onClick={() => setLightbox({ src: project.image, alt: project.title })}
                         onError={e => { e.target.style.background = 'rgba(59,130,246,0.1)'; e.target.style.border = '1px solid rgba(59,130,246,0.2)' }} />
                 </div>
 

@@ -9,7 +9,7 @@ export const projects = [
         challenge: 'Mission-critical containerized workloads in Singapore EKS needed migration to Thailand region for data residency compliance and reduced latency for Thai users.',
         solution: 'Used Velero for stateful workload backup/restore and Terraform to provision the new EKS cluster in ap-southeast-7. Implemented blue-green cutover with DNS failback.',
         tech: ['AWS EKS', 'Terraform', 'Velero', 'Helm', 'ArgoCD', 'Cloudflare DNS'],
-        gallery: [],
+        gallery: ['/images/project-eks.png'],
     },
     {
         slug: 'cicd-pipeline',
@@ -21,7 +21,7 @@ export const projects = [
         challenge: 'Manual deployments across DEV/UAT/PROD were error-prone, inconsistent, and time-consuming.',
         solution: 'Designed GitLab CI pipelines with SonarQube code quality gates and ArgoCD for GitOps-based continuous delivery with environment promotion workflow.',
         tech: ['GitLab CI', 'ArgoCD', 'Helm', 'SonarQube', 'GHCR', 'Jenkins', 'Kubernetes'],
-        gallery: [],
+        gallery: ['/images/project-cicd-1.png', '/images/project-cicd-2.png'],
     },
     {
         slug: 'db-migration',
@@ -33,7 +33,7 @@ export const projects = [
         challenge: 'Two simultaneous database migrations: cloud DB to Aurora RDS and on-premise legacy DB server to new OS, both without production downtime.',
         solution: 'Used AWS DMS with ongoing replication for the cloud migration and pg_dump/restore with streaming replication standby for the on-premise migration.',
         tech: ['AWS DMS', 'PostgreSQL', 'Aurora RDS', 'AWS RDS', 'Python', 'CloudWatch'],
-        gallery: [],
+        gallery: ['/images/project-db.png'],
     },
     {
         slug: 'multicloud',
@@ -45,7 +45,7 @@ export const projects = [
         challenge: 'Organization needed seamless connectivity and workload portability between on-premise data center and AWS cloud with high availability.',
         solution: 'Designed Site-to-Site VPN with BGP routing, implemented hybrid DNS resolution, and deployed workloads across both environments with automated failover.',
         tech: ['AWS VPC', 'Site-to-Site VPN', 'BGP', 'Terraform', 'Cloudflare', 'FortiGate'],
-        gallery: [],
+        gallery: ['/images/project-multicloud.png'],
     },
     {
         slug: 'firewall-fortigate',
@@ -57,7 +57,7 @@ export const projects = [
         challenge: 'Legacy Sophos firewall could not meet enterprise security requirements. Needed migration to FortiGate with zero service disruption.',
         solution: 'Migrated from Sophos to FortiGate 90G HA cluster. Redesigned network zones, applied DPI policies, configured Site-to-Site VPNs, and implemented security across IT/OT environments.',
         tech: ['FortiGate 90G', 'FortiAnalyzer', 'Cloudflare WAF', 'IPSec VPN', 'SSL Inspection', 'DNAT/SNAT'],
-        gallery: [],
+        gallery: ['/images/project-firewall-1.png', '/images/project-firewall-2.png'],
     },
     {
         slug: 'automation-n8n',
@@ -69,6 +69,11 @@ export const projects = [
         challenge: 'Repetitive IT operations and manual alerting processes were consuming significant time and causing delayed incident responses.',
         solution: 'Deployed self-hosted n8n on Kubernetes and built workflows for incident alerting, infrastructure monitoring notifications, and cross-system data integrations.',
         tech: ['n8n', 'Kubernetes', 'Webhook', 'REST API', 'Grafana', 'Prometheus', 'LINE Notify'],
-        gallery: [],
+        gallery: [
+            '/images/project-n8n-1.png',
+            '/images/project-n8n-2.png',
+            '/images/project-n8n-3.png',
+            '/images/project-n8n-4.png',
+        ],
     },
 ]
