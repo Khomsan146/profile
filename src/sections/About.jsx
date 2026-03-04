@@ -16,10 +16,10 @@ export default function About() {
                                 that are secure, scalable, and highly available.
                             </p>
                             <p>
-                                I specialize in <strong style={{ color: '#f1f5f9' }}>automation-driven operations</strong>,
-                                using tools like Terraform and n8n to eliminate toil and streamline workflows. My goal is to
-                                ensure system reliability while enabling rapid delivery through robust CI/CD pipelines and
-                                observability stacks.
+                                I specialize in <strong style={{ color: '#f1f5f9' }}>automation-driven problem solving</strong>,
+                                utilizing Infrastructure as Code along with extensive <strong style={{ color: '#f1f5f9' }}>Kubernetes optimization experience</strong>.
+                                Furthermore, my strong security background includes managing FortiGate administration, Cloudflare, and WAF implementations.
+                                My goal is to ensure robust system reliability while enabling rapid delivery through CI/CD pipelines and deep observability stacks.
                             </p>
                         </div>
                         <div className="features-grid">

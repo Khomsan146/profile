@@ -4,55 +4,49 @@ const GROUPS = [
     {
         title: 'Cloud, Kubernetes & DevOps',
         items: [
-            'Operated and maintained Amazon EKS production cluster (tfac-eks-cluster-prod) supporting containerized applications across UAT and Production environments.',
+            'Performed comprehensive Kubernetes configuration tuning (Deployment, Ingress, scaling, resource limits, and storage optimization) for mission-critical workloads.',
+            'Executed end-to-end SSL/TLS lifecycle management to securely expose APIs and microservices across hybrid cloud environments.',
             'Implemented GitOps deployment strategy using ArgoCD and Helm to manage version-controlled Kubernetes deployments.',
             'Integrated CI/CD pipelines using Jenkins and SonarQube for automated build, code quality validation, and deployment.',
-            'Managed container image lifecycle through GitHub Container Registry (GHCR), including version tagging and access control.',
-            'Configured Kubernetes ingress and DNS (Cloudflare) for external service exposure.',
-            'Administered Kong API Gateway (Kong Admin) for service routing, upstream configuration, and API exposure management.',
-            'Troubleshot Kubernetes deployment, networking, and API routing issues in production environments.',
+        ],
+    },
+    {
+        title: 'Database Administration',
+        items: [
+            'Managed PostgreSQL and MySQL administration, ensuring high availability and robust data integrity.',
+            'Led performance tuning initiatives and conducted slow query analysis to reduce bottlenecks and improve throughput.',
+            'Utilized tools like phpMyAdmin and created specialized Grafana monitoring dashboards for real-time database visibility.',
         ],
     },
     {
         title: 'Network Security & Firewall',
         items: [
-            'Migrated firewall infrastructure from Sophos to FortiGate 90G.',
+            'Migrated firewall infrastructure from Sophos to FortiGate 90G, strengthening enterprise security posture.',
             'Redesigned network zones and improved firewall policies for stronger segmentation and access control.',
-            'Configured and maintained Site-to-Site VPN connections between locations.',
-            'Applied security controls across IT and OT environments.',
+            'Configured and maintained Site-to-Site VPN connections and applied security controls across IT & OT environments.',
         ],
     },
     {
         title: 'Infrastructure & Data Center Operations',
         items: [
-            'Supported and maintained production infrastructure, handling incidents, service requests, problems, and change activities.',
-            'Deployed and maintained on-premise Data Center systems, including server setup and network configuration.',
-            'Analyzed Apache access/error logs and system logs to troubleshoot traffic issues and HTTP errors (4xx/5xx).',
-            'Coordinated with vendors (Microsoft, Dell, Cisco TAC, Veritas) for troubleshooting and issue resolution.',
-        ],
-    },
-    {
-        title: 'Virtualization & High Availability',
-        items: [
-            'Managed VMware and Nutanix virtualization platforms.',
-            'Optimized VM resource allocation to maintain system stability and performance.',
-            'Performed capacity planning to support workload growth.',
+            'Developed Python-based log analysis tools for Apache/Nginx, triggering automated incident reporting for anomalous traffic.',
+            'Supported and maintained production infrastructure, handling incidents, service requests, and complex change activities.',
+            'Coordinated with technology partners and vendors (Microsoft, Dell, Cisco, Veritas) for accelerated issue resolution.',
         ],
     },
     {
         title: 'Backup & Disaster Recovery',
         items: [
-            'Managed backup solutions using Veeam Backup & Replication and Veritas Backup.',
-            'Conducted restore testing to ensure recovery readiness.',
-            'Maintained disaster recovery procedures for critical systems.',
+            'Spearheaded RPO/RTO design architectures, tailoring backup solutions (Veeam, Veritas) to rigorous business SLAs.',
+            'Designed and executed robust BCP testing strategies, ensuring recovery readiness under critical scenarios.',
         ],
     },
     {
         title: 'Automation & Monitoring',
         items: [
-            'Developed automation workflows using n8n to reduce manual operational tasks and improve notification processes.',
-            'Built a web-based monitoring dashboard integrating multiple infrastructure data sources.',
-            'Developed a gold price prediction project integrating TwelveData and GNews API for technical and sentiment analysis.',
+            'Architected comprehensive monitoring systems utilizing Grafana alerts and Uptime monitoring for global visibility.',
+            'Integrated Telegram notifications and multi-level escalation matrices directly into alerting workflows.',
+            'Engineered automated service restart mechanisms through n8n automation, significantly driving down MTTR.',
         ],
     },
 ]

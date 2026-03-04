@@ -22,6 +22,16 @@ export const projects = [
         solution: 'Designed GitLab CI pipelines with SonarQube code quality gates and ArgoCD for GitOps-based continuous delivery with environment promotion workflow.',
         tech: ['GitLab CI', 'ArgoCD', 'Helm', 'SonarQube', 'GHCR', 'Jenkins', 'Kubernetes'],
         gallery: ['/images/project-cicd-1.png', '/images/project-cicd-2.png'],
+        details: `
+            <ul class="responsibilities-list" style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; color: #94a3b8; list-style: none; padding-left: 0;">
+                <li style="display: flex; gap: 0.75rem;"><span style="color: #3b82f6; flex-shrink: 0;">▸</span> <span><strong>Private Infrastructure Design:</strong> Designed and provisioned a private VPC architecture using Terraform, establishing isolated Prod and UAT environments with segmented subnets and controlled network policies.</span></li>
+                <li style="display: flex; gap: 0.75rem;"><span style="color: #3b82f6; flex-shrink: 0;">▸</span> <span><strong>Secure Connectivity:</strong> Implemented and validated Site-to-Site VPN connectivity to dependent environments, enforcing least-privilege network access to ensure secure cross-environment communication.</span></li>
+                <li style="display: flex; gap: 0.75rem;"><span style="color: #3b82f6; flex-shrink: 0;">▸</span> <span><strong>CI/CD Validation:</strong> Leveraged ArgoCD with Helm charts to manage application deployments, performing UAT validation to ensure configuration consistency and deployment integrity prior to production migration.</span></li>
+                <li style="display: flex; gap: 0.75rem;"><span style="color: #3b82f6; flex-shrink: 0;">▸</span> <span><strong>Traffic & TLS Management:</strong> Configured Kong Ingress Controller with AWS ACM for SSL/TLS termination, managing secure traffic routing and load distribution within the Kubernetes cluster.</span></li>
+                <li style="display: flex; gap: 0.75rem;"><span style="color: #3b82f6; flex-shrink: 0;">▸</span> <span><strong>Shared Storage Architecture:</strong> Implemented Amazon EFS for shared persistent storage across nodes, and utilized EBS-backed volumes for stateful workloads requiring high-performance block storage.</span></li>
+                <li style="display: flex; gap: 0.75rem;"><span style="color: #3b82f6; flex-shrink: 0;">▸</span> <span><strong>Seamless Migration Strategy:</strong> Executed a zero-downtime migration by pre-provisioning the new environment, validating workloads in advance, and performing final cutover by updating DNS records to point to the Kong Ingress endpoint.</span></li>
+            </ul>
+        `
     },
     {
         slug: 'db-migration',

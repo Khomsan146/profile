@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { projects } from '../data/projects'
 import ImageLightbox from '../components/ImageLightbox'
@@ -9,6 +9,10 @@ export default function ProjectDetail() {
     const navigate = useNavigate()
     const [lightbox, setLightbox] = useState(null)
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [slug])
+
     const project = projects.find(p => p.slug === slug)
     if (!project) return (
         <div style={{ padding: '8rem 2rem', textAlign: 'center' }}>
@@ -16,6 +20,7 @@ export default function ProjectDetail() {
             <button className="btn btn-primary" style={{ marginTop: '1rem' }} onClick={() => navigate('/')}>Go Home</button>
         </div>
     )
+    const uniqueGallery = project.gallery.filter(img => img !== project.image)
 
     return (
         <section className="project-detail">
@@ -33,7 +38,7 @@ export default function ProjectDetail() {
                         <p style={{ color: '#94a3b8', lineHeight: 1.8 }}>{project.desc}</p>
                     </div>
                     <img src={project.image} alt={project.title}
-                        style={{ width: '100%', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.08)', objectFit: 'cover', height: '300px', cursor: 'pointer' }}
+                        style={{ width: '100%', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.08)', objectFit: 'contain', maxHeight: '400px', backgroundColor: 'rgba(17,24,39,0.5)', cursor: 'pointer' }}
                         onClick={() => setLightbox({ src: project.image, alt: project.title })}
                         onError={e => { e.target.style.background = 'rgba(59,130,246,0.1)'; e.target.style.border = '1px solid rgba(59,130,246,0.2)' }} />
                 </div>
@@ -47,10 +52,10 @@ export default function ProjectDetail() {
                     ))}
                 </div>
 
-                {project.gallery.length > 0 && (
-                    <div className="gallery">
-                        {project.gallery.map((img, i) => (
-                            <img key={i} src={img} alt={`${project.title} ${i + 1}`} onClick={() => setLightbox({ src: img, alt: `${project.title} ${i + 1}` })} />
+                {uniqueGallery.length > 0 && (
+                    <div className={`gallery gallery-grid-${uniqueGallery.length}`}>
+                        {uniqueGallery.map((img, i) => (
+                            <img key={i} src={img} alt={`${project.title} gallery ${i + 1}`} onClick={() => setLightbox({ src: img, alt: `${project.title} gallery ${i + 1}` })} />
                         ))}
                     </div>
                 )}
@@ -64,6 +69,13 @@ export default function ProjectDetail() {
                     <h2>Solution</h2>
                     <p>{project.solution}</p>
                 </div>
+
+                {project.details && (
+                    <div className="detail-section">
+                        <h2>Key Implementation Details</h2>
+                        <div dangerouslySetInnerHTML={{ __html: project.details }} />
+                    </div>
+                )}
 
                 <div className="detail-section">
                     <h2>Tech Stack</h2>

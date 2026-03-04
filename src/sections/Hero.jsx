@@ -13,19 +13,16 @@ export default function Hero() {
                     <div className="hero-grid">
                         <div className="hero-content">
                             <h1>
-                                I'm <span className="gradient-text">Khomsan Khumsombat</span> <br />
+                                I'm <span className="gradient-text">Golf Khomsan</span> <br />
                                 Infrastructure Engineer
                             </h1>
                             <p>
                                 Infrastructure Engineer with DevOps capability, experienced in designing and
-                                maintaining enterprise cloud and hybrid infrastructures. Skilled in solving
-                                operational challenges through automation, Infrastructure as Code, and CI/CD
-                                implementation to improve reliability and scalability.
-                                Strong background in infrastructure security, including FortiGate firewall
-                                administration, Cloudflare configuration, and Web Application Firewall (WAF)
-                                rule management to enhance network protection and threat mitigation.
-                                Currently seeking Infrastructure or DevOps opportunities to deliver secure,
-                                automated, and resilient systems.
+                                maintaining enterprise cloud and hybrid infrastructures. Skilled in automation-driven
+                                problem solving, Infrastructure as Code, and Kubernetes optimization across high-availability environments.
+                                Strong background in security operations, including FortiGate administration, Cloudflare configuration,
+                                and Web Application Firewall (WAF) rule management to enhance network protection.
+                                Currently seeking Infrastructure or DevOps opportunities to deliver secure, automated, and resilient systems.
                             </p>
                             <div className="cta-group">
                                 <button className="btn btn-primary" onClick={() => scrollTo('#projects')}>View Projects</button>
